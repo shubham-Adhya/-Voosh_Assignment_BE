@@ -23,7 +23,7 @@ userRouter.post('/add-user', async (req, res) => {
                 if (err) {
                     throw err
                 } else {
-                    res.cookie("token", token, { sameSite: 'none', secure: true }).status(201).json({
+                    res.cookie("token", token, { sameSite: 'none', secure: true, httpOnly:"secure",}).status(201).json({
                         msg: 'User created successfully, Logging In...',
                         _id: user._id,
                         name: user.name
